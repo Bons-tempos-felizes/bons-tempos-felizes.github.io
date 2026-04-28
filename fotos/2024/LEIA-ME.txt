@@ -1,0 +1,10 @@
+Pasta do Encontro 2024
+
+Coloque aqui todas as fotos do encontro de 2024.
+
+Dicas:
+- Aceita JPG, JPEG, PNG (fotos comuns de celular ou camera).
+- Pode renomear as fotos se quiser (ex: foto-01.jpg, anete-tadeu.jpg).
+- Quando subir as fotos para o GitHub, elas vao aparecer no site.
+
+(Pode apagar este arquivo depois que adicionar fotos reais.)

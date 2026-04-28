@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bons Tempos Felizes — Turma de 1961 | Dom Bosco e São Domingos</title>
-<meta name="description" content="Site oficial da turma de 1961 dos Colégios Dom Bosco e São Domingos. Reencontros, memórias e amizades que atravessam décadas.">
+<title>Bons Tempos Felizes — Turma dos Nascidos em 1961 | Dom Bosco e São Domingos</title>
+<meta name="description" content="Site oficial da turma dos nascidos em 1961 dos Colégios Dom Bosco e São Domingos. Reencontros, memórias e amizades que atravessam décadas.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
@@ -183,6 +183,96 @@
   .photo-placeholder span{font-size:2rem;display:block;margin-bottom:.5rem}
   .gallery-note{text-align:center;margin-top:2rem;color:var(--sepia);font-style:italic}
 
+  /* LINHA DO TEMPO POR ANO */
+  .year-nav{
+    display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem;
+    margin:0 auto 3rem;max-width:760px;
+    padding:1rem;background:var(--cream);
+    border-radius:999px;border:1px solid var(--line);
+    box-shadow:var(--shadow);
+  }
+  .year-nav a{
+    display:inline-block;padding:.4rem 1rem;border-radius:999px;
+    font-weight:600;font-size:.95rem;color:var(--deep);
+    transition:all .2s ease;
+  }
+  .year-nav a:hover{background:var(--sepia);color:var(--cream)}
+  .year-nav a.featured{background:var(--gold);color:var(--ink)}
+
+  .year-section{
+    margin-bottom:3.5rem;padding:2rem 0;
+    border-top:1px solid var(--line);
+  }
+  .year-section:first-of-type{border-top:none}
+  .year-section.featured{
+    background:linear-gradient(135deg, rgba(201,162,39,.08), rgba(139,90,43,.05));
+    border-radius:20px;padding:2.5rem 2rem;margin-bottom:3.5rem;
+    border:1px solid rgba(201,162,39,.3);
+  }
+  .year-header{
+    display:flex;align-items:baseline;gap:1.5rem;flex-wrap:wrap;
+    margin-bottom:1.5rem;padding-bottom:1rem;
+    border-bottom:1px dashed var(--line);
+  }
+  .year-section.featured .year-header{border-bottom-color:rgba(201,162,39,.4)}
+  .year-number{
+    font-family:'Playfair Display',serif;font-weight:700;
+    font-size:clamp(2.5rem,5vw,3.5rem);color:var(--gold);
+    line-height:1;letter-spacing:-.02em;
+  }
+  .year-section.featured .year-number{color:var(--sepia)}
+  .year-label{
+    font-style:italic;color:var(--sepia);font-size:1.1rem;
+  }
+  .year-section.featured .year-label{
+    color:var(--deep);font-weight:600;font-style:normal;
+    background:var(--gold);padding:.3rem .9rem;border-radius:999px;
+    font-size:.9rem;letter-spacing:.05em;
+  }
+  .year-photos{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:1rem;
+  }
+  .year-photos .photo{aspect-ratio:1/1;cursor:pointer}
+  .year-photos a.photo{text-decoration:none;display:block}
+  .year-photos .photo img{
+    width:100%;height:100%;object-fit:cover;
+    display:block;border-radius:12px;
+    transition:transform .35s ease;
+  }
+  .year-photos a.photo:hover img{transform:scale(1.04)}
+  .year-empty{
+    text-align:center;color:var(--sepia);font-style:italic;
+    padding:1.5rem;font-size:.95rem;
+  }
+
+  /* LIGHTBOX */
+  .lightbox{
+    position:fixed;inset:0;background:rgba(0,0,0,.95);
+    display:none;align-items:center;justify-content:center;
+    z-index:1000;padding:2rem;cursor:zoom-out;
+  }
+  .lightbox.active{display:flex}
+  .lightbox img{
+    max-width:95%;max-height:90vh;
+    border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,.5);
+  }
+  .lightbox-close{
+    position:absolute;top:1.5rem;right:1.5rem;
+    background:transparent;border:2px solid var(--cream);
+    color:var(--cream);font-size:1.5rem;
+    width:48px;height:48px;border-radius:50%;
+    cursor:pointer;display:flex;align-items:center;justify-content:center;
+    transition:all .2s;
+  }
+  .lightbox-close:hover{background:var(--cream);color:var(--ink)}
+  .lightbox-caption{
+    position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);
+    color:var(--cream);font-style:italic;font-size:.95rem;
+    background:rgba(0,0,0,.5);padding:.5rem 1.2rem;border-radius:999px;
+  }
+
   /* MEMÓRIAS / POSTS */
   .memorias{background:var(--cream)}
   .posts{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem}
@@ -241,7 +331,7 @@
   <div class="nav">
     <a href="#" class="logo-header" style="text-decoration:none">
       <img src="logo.jpg" alt="Bons Tempos Felizes 1961">
-      <div class="logo-text">Bons Tempos Felizes<span>Turma 1961</span></div>
+      <div class="logo-text">Bons Tempos Felizes<span>Nascidos em 1961</span></div>
     </a>
     <nav>
       <ul>
@@ -257,7 +347,7 @@
 
 <section class="hero">
   <div class="hero-inner">
-    <img src="logo.jpg" alt="Bons Tempos Felizes — Turma de 1961" class="hero-logo">
+    <img src="logo.jpg" alt="Bons Tempos Felizes — Nascidos em 1961" class="hero-logo">
     <span class="kicker">Colégio Dom Bosco · Colégio São Domingos</span>
     <p class="subtitle">Uma amizade que começou nos corredores do ginásio e atravessa mais de seis décadas. Somos cerca de 60 colegas que continuam se encontrando para celebrar a vida e relembrar os bons momentos que vivemos juntos.</p>
     <div class="cta-row">
@@ -275,7 +365,7 @@
     </div>
     <div class="about-grid">
       <div class="about-text">
-        <p>Tudo começou no começo dos anos 60, quando um grupo de jovens dividia carteiras, recreios e sonhos nos <strong>Colégios Dom Bosco e São Domingos</strong>. Éramos a turma de 1961 — curiosos, sonhadores, alunos da vida.</p>
+        <p>Tudo começou no começo dos anos 60, quando um grupo de jovens dividia carteiras, recreios e sonhos nos <strong>Colégios Dom Bosco e São Domingos</strong>. Éramos os nascidos em 1961.</p>
         <p>Os anos passaram, cada um seguiu o seu caminho, construiu sua família, sua carreira, suas histórias. Mas há laços que o tempo não desfaz.</p>
         <p>Graças ao carinho e à dedicação da nossa querida colega <strong>Anete Di Mambro Gandra</strong>, essa turma se reencontrou. Hoje somos cerca de 60 colegas que se reúnem todos os anos para rir, abraçar, reviver lembranças e criar novas.</p>
         <p>Este site é a nossa casa digital — um lugar para guardar fotos, histórias e os bons tempos felizes que continuamos a viver juntos.</p>
@@ -324,21 +414,145 @@
 <section class="galeria" id="galeria">
   <div class="container">
     <div class="section-title">
-      <h2>Galeria de Memórias</h2>
+      <h2>Nossa Linha do Tempo</h2>
       <div class="ornament">❦</div>
-      <p style="max-width:600px;margin:0 auto;color:var(--sepia)">Cada foto é um pedaço da nossa história. Envie as suas para enriquecermos este álbum coletivo.</p>
+      <p style="max-width:640px;margin:0 auto;color:var(--sepia)">Dez anos de reencontros, abraços e boas histórias. Cada ano, um capítulo da nossa amizade.</p>
     </div>
-    <div class="gallery-grid">
-      <div class="photo"><div class="photo-placeholder"><span>📷</span>Encontro 2025</div></div>
-      <div class="photo"><div class="photo-placeholder"><span>📷</span>Encontro 2024</div></div>
-      <div class="photo"><div class="photo-placeholder"><span>📷</span>Encontro 2023</div></div>
-      <div class="photo"><div class="photo-placeholder"><span>📷</span>Fotos antigas</div></div>
-      <div class="photo"><div class="photo-placeholder"><span>📷</span>Dom Bosco</div></div>
-      <div class="photo"><div class="photo-placeholder"><span>📷</span>São Domingos</div></div>
-      <div class="photo"><div class="photo-placeholder"><span>📷</span>Bastidores</div></div>
-      <div class="photo"><div class="photo-placeholder"><span>📷</span>Momentos especiais</div></div>
-    </div>
-    <p class="gallery-note">✿ Em breve, fotos reais dos nossos encontros ✿</p>
+
+    <nav class="year-nav" aria-label="Navegação por ano">
+      <a href="#ano-2026" class="featured">2026</a>
+      <a href="#ano-2025">2025</a>
+      <a href="#ano-2024">2024</a>
+      <a href="#ano-2023">2023</a>
+      <a href="#ano-2022">2022</a>
+      <a href="#ano-2021">2021</a>
+      <a href="#ano-2020">2020</a>
+      <a href="#ano-2019">2019</a>
+      <a href="#ano-2018">2018</a>
+      <a href="#ano-2017">2017</a>
+    </nav>
+
+    <article class="year-section featured" id="ano-2026">
+      <div class="year-header">
+        <span class="year-number">2026</span>
+        <span class="year-label">Próximo Encontro · 01 de Maio</span>
+      </div>
+      <div class="year-photos">
+        <div class="photo"><div class="photo-placeholder"><span>✦</span>Aguardando<br>o grande dia</div></div>
+        <div class="photo"><div class="photo-placeholder"><span>✦</span>Hambúrgueria<br>EMBRASA BBQ</div></div>
+        <div class="photo"><div class="photo-placeholder"><span>✦</span>Sexta-feira<br>às 18h00</div></div>
+      </div>
+    </article>
+
+    <article class="year-section" id="ano-2025">
+      <div class="year-header">
+        <span class="year-number">2025</span>
+        <span class="year-label">Mais um ano de reencontros</span>
+      </div>
+      <div class="year-photos">
+        <a class="photo" href="fotos/2025/2025-a.jpeg" data-caption="Encontro 2025"><img src="fotos/2025/2025-a.jpeg" alt="Encontro 2025 — foto 1" loading="lazy"></a>
+        <a class="photo" href="fotos/2025/2025-b.jpeg" data-caption="Encontro 2025"><img src="fotos/2025/2025-b.jpeg" alt="Encontro 2025 — foto 2" loading="lazy"></a>
+        <a class="photo" href="fotos/2025/2025-c.jpeg" data-caption="Encontro 2025"><img src="fotos/2025/2025-c.jpeg" alt="Encontro 2025 — foto 3" loading="lazy"></a>
+      </div>
+    </article>
+
+    <article class="year-section" id="ano-2024">
+      <div class="year-header">
+        <span class="year-number">2024</span>
+        <span class="year-label">Histórias e abraços</span>
+      </div>
+      <div class="year-photos">
+        <a class="photo" href="fotos/2024/2024-a.jpeg" data-caption="Encontro 2024"><img src="fotos/2024/2024-a.jpeg" alt="Encontro 2024 — foto 1" loading="lazy"></a>
+        <a class="photo" href="fotos/2024/2024-b.jpeg" data-caption="Encontro 2024"><img src="fotos/2024/2024-b.jpeg" alt="Encontro 2024 — foto 2" loading="lazy"></a>
+        <a class="photo" href="fotos/2024/2024-c.jpeg" data-caption="Encontro 2024"><img src="fotos/2024/2024-c.jpeg" alt="Encontro 2024 — foto 3" loading="lazy"></a>
+        <a class="photo" href="fotos/2024/2024-d.jpeg" data-caption="Encontro 2024"><img src="fotos/2024/2024-d.jpeg" alt="Encontro 2024 — foto 4" loading="lazy"></a>
+        <a class="photo" href="fotos/2024/2024-e.jpeg" data-caption="Encontro 2024"><img src="fotos/2024/2024-e.jpeg" alt="Encontro 2024 — foto 5" loading="lazy"></a>
+        <a class="photo" href="fotos/2024/2024-f.jpeg" data-caption="Encontro 2024"><img src="fotos/2024/2024-f.jpeg" alt="Encontro 2024 — foto 6" loading="lazy"></a>
+        <a class="photo" href="fotos/2024/2024-g.jpeg" data-caption="Encontro 2024"><img src="fotos/2024/2024-g.jpeg" alt="Encontro 2024 — foto 7" loading="lazy"></a>
+      </div>
+    </article>
+
+    <article class="year-section" id="ano-2023">
+      <div class="year-header">
+        <span class="year-number">2023</span>
+        <span class="year-label">Saudade que vira festa</span>
+      </div>
+      <div class="year-photos">
+        <a class="photo" href="fotos/2023/2023-a.jpeg" data-caption="Encontro 2023"><img src="fotos/2023/2023-a.jpeg" alt="Encontro 2023 — foto 1" loading="lazy"></a>
+        <a class="photo" href="fotos/2023/2023-b.jpeg" data-caption="Encontro 2023"><img src="fotos/2023/2023-b.jpeg" alt="Encontro 2023 — foto 2" loading="lazy"></a>
+        <a class="photo" href="fotos/2023/2023-c.jpeg" data-caption="Encontro 2023"><img src="fotos/2023/2023-c.jpeg" alt="Encontro 2023 — foto 3" loading="lazy"></a>
+      </div>
+    </article>
+
+    <article class="year-section" id="ano-2022">
+      <div class="year-header">
+        <span class="year-number">2022</span>
+        <span class="year-label">De volta às mesas</span>
+      </div>
+      <p class="year-empty">✿ Aguardando fotos deste encontro · envie pelo e-mail da turma ✿</p>
+    </article>
+
+    <article class="year-section" id="ano-2021">
+      <div class="year-header">
+        <span class="year-number">2021</span>
+        <span class="year-label">Reencontros possíveis</span>
+      </div>
+      <p class="year-empty">✿ Aguardando fotos deste encontro · envie pelo e-mail da turma ✿</p>
+    </article>
+
+    <article class="year-section" id="ano-2020">
+      <div class="year-header">
+        <span class="year-number">2020</span>
+        <span class="year-label">Mesmo de longe, sempre juntos</span>
+      </div>
+      <p class="year-empty">✿ Aguardando fotos deste encontro · envie pelo e-mail da turma ✿</p>
+    </article>
+
+    <article class="year-section" id="ano-2019">
+      <div class="year-header">
+        <span class="year-number">2019</span>
+        <span class="year-label">Bons momentos felizes</span>
+      </div>
+      <div class="year-photos">
+        <a class="photo" href="fotos/2019/2019-a.jpeg" data-caption="Encontro 2019"><img src="fotos/2019/2019-a.jpeg" alt="Encontro 2019 — foto 1" loading="lazy"></a>
+        <a class="photo" href="fotos/2019/2019-b.jpeg" data-caption="Encontro 2019"><img src="fotos/2019/2019-b.jpeg" alt="Encontro 2019 — foto 2" loading="lazy"></a>
+        <a class="photo" href="fotos/2019/2019-c.jpeg" data-caption="Encontro 2019"><img src="fotos/2019/2019-c.jpeg" alt="Encontro 2019 — foto 3" loading="lazy"></a>
+        <a class="photo" href="fotos/2019/2019-d.jpeg" data-caption="Encontro 2019"><img src="fotos/2019/2019-d.jpeg" alt="Encontro 2019 — foto 4" loading="lazy"></a>
+        <a class="photo" href="fotos/2019/2019-e.jpeg" data-caption="Encontro 2019"><img src="fotos/2019/2019-e.jpeg" alt="Encontro 2019 — foto 5" loading="lazy"></a>
+        <a class="photo" href="fotos/2019/2019-f.jpeg" data-caption="Encontro 2019"><img src="fotos/2019/2019-f.jpeg" alt="Encontro 2019 — foto 6" loading="lazy"></a>
+        <a class="photo" href="fotos/2019/2019-g.jpeg" data-caption="Encontro 2019"><img src="fotos/2019/2019-g.jpeg" alt="Encontro 2019 — foto 7" loading="lazy"></a>
+        <a class="photo" href="fotos/2019/2019-h.jpeg" data-caption="Encontro 2019"><img src="fotos/2019/2019-h.jpeg" alt="Encontro 2019 — foto 8" loading="lazy"></a>
+      </div>
+    </article>
+
+    <article class="year-section" id="ano-2018">
+      <div class="year-header">
+        <span class="year-number">2018</span>
+        <span class="year-label">Risadas que ecoam</span>
+      </div>
+      <div class="year-photos">
+        <a class="photo" href="fotos/2018/2018-a.jpeg" data-caption="Encontro 2018"><img src="fotos/2018/2018-a.jpeg" alt="Encontro 2018 — foto 1" loading="lazy"></a>
+        <a class="photo" href="fotos/2018/2018-b.jpeg" data-caption="Encontro 2018"><img src="fotos/2018/2018-b.jpeg" alt="Encontro 2018 — foto 2" loading="lazy"></a>
+        <a class="photo" href="fotos/2018/2018-c.jpeg" data-caption="Encontro 2018"><img src="fotos/2018/2018-c.jpeg" alt="Encontro 2018 — foto 3" loading="lazy"></a>
+        <a class="photo" href="fotos/2018/2018-d.jpeg" data-caption="Encontro 2018"><img src="fotos/2018/2018-d.jpeg" alt="Encontro 2018 — foto 4" loading="lazy"></a>
+        <a class="photo" href="fotos/2018/2018-e.jpeg" data-caption="Encontro 2018"><img src="fotos/2018/2018-e.jpeg" alt="Encontro 2018 — foto 5" loading="lazy"></a>
+        <a class="photo" href="fotos/2018/2018-f.jpeg" data-caption="Encontro 2018"><img src="fotos/2018/2018-f.jpeg" alt="Encontro 2018 — foto 6" loading="lazy"></a>
+        <a class="photo" href="fotos/2018/2018-g.jpeg" data-caption="Encontro 2018"><img src="fotos/2018/2018-g.jpeg" alt="Encontro 2018 — foto 7" loading="lazy"></a>
+      </div>
+    </article>
+
+    <article class="year-section" id="ano-2017">
+      <div class="year-header">
+        <span class="year-number">2017</span>
+        <span class="year-label">Onde tudo recomeçou</span>
+      </div>
+      <div class="year-photos">
+        <a class="photo" href="fotos/2017/2017-a.jpeg" data-caption="Encontro 2017"><img src="fotos/2017/2017-a.jpeg" alt="Encontro 2017 — foto 1" loading="lazy"></a>
+        <a class="photo" href="fotos/2017/2017-b.jpeg" data-caption="Encontro 2017"><img src="fotos/2017/2017-b.jpeg" alt="Encontro 2017 — foto 2" loading="lazy"></a>
+      </div>
+    </article>
+
+    <p class="gallery-note">✿ Envie suas fotos pelo e-mail da turma para que cada ano ganhe vida ✿</p>
   </div>
 </section>
 
@@ -354,7 +568,7 @@
         <div class="post-date">Em breve</div>
         <h3>A origem do reencontro</h3>
         <p>Como a Anete conseguiu reunir depois de tantos anos 60 colegas que estavam espalhados pelo Brasil e pelo mundo. Uma história de perseverança, telefonemas, redes sociais e muito amor.</p>
-        <p class="author">— Turma de 1961</p>
+        <p class="author">— Turma dos Nascidos em 1961</p>
       </article>
       <article class="post">
         <div class="post-date">Em breve</div>
@@ -366,7 +580,7 @@
         <div class="post-date">Em breve</div>
         <h3>São Domingos: lembranças</h3>
         <p>As aulas, as festas juninas, os amigos que viraram família. O São Domingos foi muito mais do que uma escola — foi onde escrevemos juntos os primeiros capítulos das nossas vidas.</p>
-        <p class="author">— Turma de 1961</p>
+        <p class="author">— Turma dos Nascidos em 1961</p>
       </article>
     </div>
   </div>
@@ -402,11 +616,51 @@
 <footer>
   <img src="logo.jpg" alt="Bons Tempos Felizes 1961" style="max-width:220px;margin:0 auto 1rem;border-radius:8px;display:block">
   <div class="ornament">❦ &nbsp; ❦ &nbsp; ❦</div>
-  <p><strong>Bons Tempos Felizes</strong> · Turma de 1961</p>
+  <p><strong>Bons Tempos Felizes</strong> · Turma dos Nascidos em 1961</p>
   <p>Colégio Dom Bosco · Colégio São Domingos</p>
   <p style="margin-top:1rem;font-size:.85rem;opacity:.7">Feito com carinho para guardar nossas memórias · © 2026</p>
   <p style="margin-top:.5rem"><a href="https://instagram.com/bonstemposfelizes" target="_blank" rel="noopener">Siga-nos no Instagram</a></p>
 </footer>
+
+<!-- Lightbox para fotos -->
+<div class="lightbox" id="lightbox" role="dialog" aria-label="Visualizador de foto">
+  <button class="lightbox-close" aria-label="Fechar">×</button>
+  <img id="lightbox-img" src="" alt="">
+  <div class="lightbox-caption" id="lightbox-caption"></div>
+</div>
+
+<script>
+(function(){
+  var lightbox = document.getElementById('lightbox');
+  var lightboxImg = document.getElementById('lightbox-img');
+  var caption = document.getElementById('lightbox-caption');
+  var closeBtn = lightbox.querySelector('.lightbox-close');
+
+  document.querySelectorAll('.year-photos a.photo').forEach(function(link){
+    link.addEventListener('click', function(e){
+      e.preventDefault();
+      lightboxImg.src = link.getAttribute('href');
+      lightboxImg.alt = link.querySelector('img').alt;
+      caption.textContent = link.getAttribute('data-caption') || '';
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  function close(){
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  closeBtn.addEventListener('click', close);
+  lightbox.addEventListener('click', function(e){
+    if(e.target === lightbox) close();
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && lightbox.classList.contains('active')) close();
+  });
+})();
+</script>
 
 </body>
 </html>
