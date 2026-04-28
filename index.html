@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bons Tempos Felizes — Turma de 1961 | Dom Bosco e São Domingos</title>
+<meta name="description" content="Site oficial da turma de 1961 dos Colégios Dom Bosco e São Domingos. Reencontros, memórias e amizades que atravessam décadas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#fdf7ef;
+    --sepia:#8b5a2b;
+    --gold:#c9a227;
+    --deep:#3a2a1a;
+    --ink:#2b2118;
+    --soft:#f5e9d7;
+    --line:rgba(139,90,43,.25);
+    --shadow:0 10px 30px rgba(58,42,26,.12);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Lora', Georgia, serif;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.7;
+    font-size:18px;
+  }
+  h1,h2,h3{font-family:'Playfair Display', Georgia, serif;font-weight:700;color:var(--deep);line-height:1.2}
+  h1{font-size:clamp(2.2rem,5vw,4rem)}
+  h2{font-size:clamp(1.8rem,3.5vw,2.6rem);margin-bottom:1rem}
+  h3{font-size:1.4rem;margin-bottom:.6rem}
+  p{margin-bottom:1rem}
+  a{color:var(--sepia);text-decoration:none;transition:color .2s}
+  a:hover{color:var(--gold)}
+  img{max-width:100%;display:block}
+
+  /* HEADER */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(10,8,6,.95);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid rgba(201,162,39,.25);
+  }
+  .nav{
+    max-width:1200px;margin:0 auto;padding:.8rem 1.5rem;
+    display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  }
+  .logo-header{display:flex;align-items:center;gap:.8rem}
+  .logo-header img{height:44px;width:auto;border-radius:6px}
+  .logo-header .logo-text{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--cream);letter-spacing:.02em}
+  .logo-header .logo-text span{color:var(--gold);display:block;font-size:.75rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase}
+  nav ul{list-style:none;display:flex;gap:1.5rem;flex-wrap:wrap}
+  nav a{color:var(--cream);font-weight:500;font-size:.95rem}
+  nav a:hover{color:var(--gold)}
+
+  /* HERO */
+  .hero{
+    position:relative;
+    padding:4rem 1.5rem 4.5rem;
+    text-align:center;
+    background:
+      radial-gradient(circle at 20% 30%, rgba(201,162,39,.18), transparent 55%),
+      radial-gradient(circle at 80% 70%, rgba(201,162,39,.12), transparent 55%),
+      linear-gradient(180deg, #000000 0%, #1a1208 100%);
+    overflow:hidden;
+    color:var(--cream);
+  }
+  .hero::before{
+    content:'';position:absolute;inset:0;
+    background-image:
+      radial-gradient(1px 1px at 20% 30%, rgba(255,230,150,.8), transparent),
+      radial-gradient(1px 1px at 70% 80%, rgba(255,230,150,.6), transparent),
+      radial-gradient(1.5px 1.5px at 40% 60%, rgba(255,230,150,.7), transparent),
+      radial-gradient(1px 1px at 85% 20%, rgba(255,230,150,.5), transparent),
+      radial-gradient(1.5px 1.5px at 15% 80%, rgba(255,230,150,.6), transparent);
+    background-size:100% 100%;
+    pointer-events:none;
+  }
+  .hero-inner{max-width:900px;margin:0 auto;position:relative;z-index:2}
+  .hero-logo{max-width:min(560px,90%);margin:0 auto 1.5rem;display:block;filter:drop-shadow(0 8px 30px rgba(201,162,39,.25))}
+  .kicker{
+    display:inline-block;
+    letter-spacing:.3em;text-transform:uppercase;
+    color:var(--gold);font-size:.8rem;font-weight:600;
+    margin-bottom:1rem;
+  }
+  .hero h1{margin-bottom:1rem;color:var(--cream)}
+  .hero h1 em{font-style:italic;color:var(--gold)}
+  .hero .subtitle{font-size:1.2rem;color:rgba(253,247,239,.9);max-width:640px;margin:0 auto 2rem}
+  .ornament{
+    font-size:1.5rem;color:var(--gold);margin:1.5rem 0;letter-spacing:.5rem;
+  }
+
+  .cta-row{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:1.5rem}
+  .btn{
+    display:inline-block;
+    padding:.9rem 1.8rem;border-radius:999px;
+    font-weight:600;font-size:1rem;
+    transition:all .2s ease;
+    cursor:pointer;border:2px solid transparent;
+  }
+  .btn-primary{background:var(--sepia);color:var(--cream)}
+  .btn-primary:hover{background:var(--deep);color:var(--cream)}
+  .btn-outline{background:transparent;color:var(--sepia);border-color:var(--sepia)}
+  .btn-outline:hover{background:var(--sepia);color:var(--cream)}
+  .hero .btn-outline{color:var(--gold);border-color:var(--gold)}
+  .hero .btn-outline:hover{background:var(--gold);color:var(--ink)}
+  .hero .btn-primary{background:var(--gold);color:var(--ink)}
+  .hero .btn-primary:hover{background:var(--cream);color:var(--ink)}
+
+  /* SECTIONS */
+  section{padding:4.5rem 1.5rem}
+  .container{max-width:1100px;margin:0 auto}
+  .section-title{text-align:center;margin-bottom:2.5rem}
+  .section-title .ornament{margin:.8rem 0 0}
+
+  /* ABOUT */
+  .about{background:var(--cream)}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+  .about-text p{font-size:1.05rem}
+  .about-card{
+    background:var(--soft);
+    border-radius:16px;padding:2rem;
+    box-shadow:var(--shadow);
+    border:1px solid var(--line);
+  }
+  .about-card h3{color:var(--sepia)}
+  .stat-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.5rem}
+  .stat{text-align:center;padding:1rem;background:var(--cream);border-radius:12px}
+  .stat-num{font-family:'Playfair Display',serif;font-size:2rem;color:var(--gold);font-weight:700;display:block}
+  .stat-label{font-size:.85rem;color:var(--deep);text-transform:uppercase;letter-spacing:.1em}
+
+  /* ENCONTRO 2026 */
+  .encontro{
+    background:linear-gradient(135deg, #3a2a1a 0%, #5c3d22 100%);
+    color:var(--cream);
+    text-align:center;
+  }
+  .encontro h2{color:var(--cream)}
+  .encontro .kicker{color:var(--gold)}
+  .date-box{
+    display:inline-block;
+    background:rgba(253,247,239,.08);
+    border:1px solid rgba(201,162,39,.4);
+    border-radius:20px;
+    padding:2rem 3rem;margin:1.5rem 0;
+    backdrop-filter:blur(4px);
+  }
+  .date-day{font-family:'Playfair Display',serif;font-size:4rem;color:var(--gold);line-height:1;font-weight:700}
+  .date-month{font-size:1.2rem;letter-spacing:.3em;text-transform:uppercase;margin-top:.5rem}
+  .date-year{font-size:1.5rem;margin-top:.5rem;color:rgba(253,247,239,.85)}
+  .encontro p{max-width:600px;margin:1rem auto;color:rgba(253,247,239,.9)}
+
+  /* GALERIA */
+  .galeria{background:var(--soft)}
+  .gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:1rem;
+  }
+  .photo{
+    aspect-ratio:4/3;
+    border-radius:12px;
+    background:var(--cream);
+    border:1px solid var(--line);
+    box-shadow:var(--shadow);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--sepia);font-style:italic;
+    position:relative;overflow:hidden;
+    transition:transform .3s ease;
+  }
+  .photo:hover{transform:translateY(-4px)}
+  .photo::before{
+    content:'';position:absolute;inset:0;
+    background:linear-gradient(135deg, rgba(201,162,39,.1), rgba(139,90,43,.15));
+  }
+  .photo-placeholder{
+    text-align:center;padding:1rem;position:relative;z-index:1;
+  }
+  .photo-placeholder span{font-size:2rem;display:block;margin-bottom:.5rem}
+  .gallery-note{text-align:center;margin-top:2rem;color:var(--sepia);font-style:italic}
+
+  /* MEMÓRIAS / POSTS */
+  .memorias{background:var(--cream)}
+  .posts{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem}
+  .post{
+    background:var(--soft);
+    border-radius:16px;padding:2rem;
+    border:1px solid var(--line);
+    box-shadow:var(--shadow);
+  }
+  .post-date{font-size:.85rem;color:var(--sepia);text-transform:uppercase;letter-spacing:.15em;margin-bottom:.5rem}
+  .post h3{color:var(--deep)}
+  .post p{font-size:1rem;margin-bottom:.5rem}
+  .post .author{font-style:italic;color:var(--sepia);font-size:.95rem;margin-top:1rem}
+
+  /* CONTATO */
+  .contato{
+    background:linear-gradient(180deg, var(--soft), var(--cream));
+    text-align:center;
+  }
+  .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin-top:2rem}
+  .contact-card{
+    background:var(--cream);
+    padding:2rem;border-radius:16px;
+    border:1px solid var(--line);
+    box-shadow:var(--shadow);
+  }
+  .contact-card .icon{font-size:2rem;display:block;margin-bottom:.5rem}
+  .contact-card h3{color:var(--sepia);font-size:1.1rem}
+
+  /* FOOTER */
+  footer{
+    background:var(--deep);
+    color:var(--cream);
+    padding:3rem 1.5rem 2rem;
+    text-align:center;
+  }
+  footer .ornament{color:var(--gold);margin-bottom:1rem}
+  footer p{margin-bottom:.5rem;font-size:.95rem;color:rgba(253,247,239,.8)}
+  footer a{color:var(--gold)}
+  footer a:hover{color:var(--cream)}
+
+  /* RESPONSIVE */
+  @media (max-width:768px){
+    .about-grid{grid-template-columns:1fr;gap:2rem}
+    nav ul{gap:1rem;font-size:.9rem}
+    .date-box{padding:1.5rem 2rem}
+    .date-day{font-size:3rem}
+    section{padding:3rem 1.2rem}
+    .hero{padding:3.5rem 1.2rem 3rem}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="#" class="logo-header" style="text-decoration:none">
+      <img src="logo.jpg" alt="Bons Tempos Felizes 1961">
+      <div class="logo-text">Bons Tempos Felizes<span>Turma 1961</span></div>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="#sobre">Nossa História</a></li>
+        <li><a href="#encontro">Encontro 2026</a></li>
+        <li><a href="#galeria">Galeria</a></li>
+        <li><a href="#memorias">Memórias</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <img src="logo.jpg" alt="Bons Tempos Felizes — Turma de 1961" class="hero-logo">
+    <span class="kicker">Colégio Dom Bosco · Colégio São Domingos</span>
+    <p class="subtitle">Uma amizade que começou nos corredores do ginásio e atravessa mais de seis décadas. Somos cerca de 60 colegas que continuam se encontrando para celebrar a vida e relembrar os bons momentos que vivemos juntos.</p>
+    <div class="cta-row">
+      <a href="#encontro" class="btn btn-primary">Nosso Encontro 2026</a>
+      <a href="#galeria" class="btn btn-outline">Ver Memórias</a>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="sobre">
+  <div class="container">
+    <div class="section-title">
+      <h2>Nossa História</h2>
+      <div class="ornament">❦</div>
+    </div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>Tudo começou no começo dos anos 60, quando um grupo de jovens dividia carteiras, recreios e sonhos nos <strong>Colégios Dom Bosco e São Domingos</strong>. Éramos a turma de 1961 — curiosos, sonhadores, alunos da vida.</p>
+        <p>Os anos passaram, cada um seguiu o seu caminho, construiu sua família, sua carreira, suas histórias. Mas há laços que o tempo não desfaz.</p>
+        <p>Graças ao carinho e à dedicação da nossa querida colega <strong>Anete Di Mambro Gandra</strong>, essa turma se reencontrou. Hoje somos cerca de 60 colegas que se reúnem todos os anos para rir, abraçar, reviver lembranças e criar novas.</p>
+        <p>Este site é a nossa casa digital — um lugar para guardar fotos, histórias e os bons tempos felizes que continuamos a viver juntos.</p>
+      </div>
+      <div class="about-card">
+        <h3>A nossa turma em números</h3>
+        <p style="font-size:.95rem">Um retrato da nossa grande família de amigos:</p>
+        <div class="stat-row">
+          <div class="stat">
+            <span class="stat-num">60</span>
+            <span class="stat-label">Colegas</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">65+</span>
+            <span class="stat-label">Anos de amizade</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">2</span>
+            <span class="stat-label">Colégios</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">∞</span>
+            <span class="stat-label">Memórias</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="encontro" id="encontro">
+  <div class="container">
+    <span class="kicker">Reserve na agenda</span>
+    <h2>Encontro Anual 2026</h2>
+    <div class="date-box">
+      <div class="date-day">01</div>
+      <div class="date-month">Maio</div>
+      <div class="date-year">2026</div>
+    </div>
+    <p>Mais um ano, mais um motivo para celebrar. Reserve a data e venha matar a saudade daqueles que compartilharam com você os anos mais bonitos da juventude.</p>
+    <p><em>Informações completas, local e confirmação de presença serão divulgadas aqui e pelo grupo da turma.</em></p>
+    <a href="#contato" class="btn btn-primary" style="background:var(--gold);color:var(--deep);margin-top:1rem">Confirmar Presença</a>
+  </div>
+</section>
+
+<section class="galeria" id="galeria">
+  <div class="container">
+    <div class="section-title">
+      <h2>Galeria de Memórias</h2>
+      <div class="ornament">❦</div>
+      <p style="max-width:600px;margin:0 auto;color:var(--sepia)">Cada foto é um pedaço da nossa história. Envie as suas para enriquecermos este álbum coletivo.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="photo"><div class="photo-placeholder"><span>📷</span>Encontro 2025</div></div>
+      <div class="photo"><div class="photo-placeholder"><span>📷</span>Encontro 2024</div></div>
+      <div class="photo"><div class="photo-placeholder"><span>📷</span>Encontro 2023</div></div>
+      <div class="photo"><div class="photo-placeholder"><span>📷</span>Fotos antigas</div></div>
+      <div class="photo"><div class="photo-placeholder"><span>📷</span>Dom Bosco</div></div>
+      <div class="photo"><div class="photo-placeholder"><span>📷</span>São Domingos</div></div>
+      <div class="photo"><div class="photo-placeholder"><span>📷</span>Bastidores</div></div>
+      <div class="photo"><div class="photo-placeholder"><span>📷</span>Momentos especiais</div></div>
+    </div>
+    <p class="gallery-note">✿ Em breve, fotos reais dos nossos encontros ✿</p>
+  </div>
+</section>
+
+<section class="memorias" id="memorias">
+  <div class="container">
+    <div class="section-title">
+      <h2>Memórias & Histórias</h2>
+      <div class="ornament">❦</div>
+      <p style="max-width:600px;margin:0 auto;color:var(--sepia)">Um espaço para compartilhar aquelas histórias inesquecíveis do ginásio e dos nossos reencontros.</p>
+    </div>
+    <div class="posts">
+      <article class="post">
+        <div class="post-date">Em breve</div>
+        <h3>A origem do reencontro</h3>
+        <p>Como a Anete conseguiu reunir depois de tantos anos 60 colegas que estavam espalhados pelo Brasil e pelo mundo. Uma história de perseverança, telefonemas, redes sociais e muito amor.</p>
+        <p class="author">— Turma de 1961</p>
+      </article>
+      <article class="post">
+        <div class="post-date">Em breve</div>
+        <h3>Os corredores do Dom Bosco</h3>
+        <p>Relatos dos nossos tempos de ginásio: as matérias favoritas, os professores marcantes, as travessuras e aquela sineta que anunciava o fim da aula e o começo da brincadeira no pátio.</p>
+        <p class="author">— Memórias compartilhadas</p>
+      </article>
+      <article class="post">
+        <div class="post-date">Em breve</div>
+        <h3>São Domingos: lembranças</h3>
+        <p>As aulas, as festas juninas, os amigos que viraram família. O São Domingos foi muito mais do que uma escola — foi onde escrevemos juntos os primeiros capítulos das nossas vidas.</p>
+        <p class="author">— Turma de 1961</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="contato" id="contato">
+  <div class="container">
+    <div class="section-title">
+      <h2>Fale Conosco</h2>
+      <div class="ornament">❦</div>
+      <p>Quer confirmar presença, enviar fotos ou reencontrar a turma? Entre em contato!</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <span class="icon">✉️</span>
+        <h3>E-mail</h3>
+        <p><a href="mailto:tadeu.tupiz@gmail.com">tadeu.tupiz@gmail.com</a></p>
+      </div>
+      <div class="contact-card">
+        <span class="icon">📸</span>
+        <h3>Instagram</h3>
+        <p><a href="https://instagram.com/bonstemposfelizes" target="_blank" rel="noopener">@bonstemposfelizes</a></p>
+      </div>
+      <div class="contact-card">
+        <span class="icon">💬</span>
+        <h3>Grupo da Turma</h3>
+        <p>Entre em contato pelo WhatsApp da turma ou pelo e-mail acima</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <img src="logo.jpg" alt="Bons Tempos Felizes 1961" style="max-width:220px;margin:0 auto 1rem;border-radius:8px;display:block">
+  <div class="ornament">❦ &nbsp; ❦ &nbsp; ❦</div>
+  <p><strong>Bons Tempos Felizes</strong> · Turma de 1961</p>
+  <p>Colégio Dom Bosco · Colégio São Domingos</p>
+  <p style="margin-top:1rem;font-size:.85rem;opacity:.7">Feito com carinho para guardar nossas memórias · © 2026</p>
+  <p style="margin-top:.5rem"><a href="https://instagram.com/bonstemposfelizes" target="_blank" rel="noopener">Siga-nos no Instagram</a></p>
+</footer>
+
+</body>
+</html>
