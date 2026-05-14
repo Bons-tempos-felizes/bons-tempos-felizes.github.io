@@ -273,8 +273,71 @@
     background:rgba(0,0,0,.5);padding:.5rem 1.2rem;border-radius:999px;
   }
 
+  /* NOSSAS TURMAS */
+  .turmas{background:var(--cream)}
+  .turmas-intro{max-width:700px;margin:0 auto;color:var(--sepia);font-size:1.05rem}
+  .turmas-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:2rem;
+    margin-top:1rem;
+  }
+  .turma-card{
+    background:var(--soft);
+    border-radius:16px;
+    border:1px solid var(--line);
+    box-shadow:var(--shadow);
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    transition:transform .3s ease, box-shadow .3s ease;
+  }
+  .turma-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 16px 40px rgba(58,42,26,.18);
+  }
+  .turma-preview{
+    position:relative;
+    display:block;
+    overflow:hidden;
+    border-bottom:1px solid var(--line);
+    background:var(--cream);
+  }
+  .turma-preview img{
+    width:100%;height:auto;display:block;
+    transition:transform .4s ease;
+  }
+  .turma-preview:hover img{transform:scale(1.03)}
+  .turma-preview-overlay{
+    position:absolute;
+    bottom:1rem;right:1rem;
+    background:rgba(58,42,26,.92);
+    color:var(--gold);
+    padding:.5rem 1rem;
+    border-radius:999px;
+    font-size:.85rem;font-weight:600;
+    letter-spacing:.05em;
+    backdrop-filter:blur(4px);
+    pointer-events:none;
+  }
+  .turma-info{
+    padding:1.5rem;
+    display:flex;flex-direction:column;
+  }
+  .turma-info h3{color:var(--sepia);margin-bottom:.3rem}
+  .turma-meta{
+    font-style:italic;color:var(--deep);font-size:.95rem;margin-bottom:1rem;
+  }
+  .turma-actions{
+    display:flex;gap:1rem;flex-wrap:wrap;align-items:center;
+    margin-top:auto;
+  }
+  .turma-actions .btn{padding:.55rem 1.1rem;font-size:.9rem;border-width:2px}
+  .btn-link{color:var(--sepia);font-size:.9rem;font-weight:500}
+  .btn-link:hover{color:var(--gold)}
+
   /* MEMÓRIAS / POSTS */
-  .memorias{background:var(--cream)}
+  .memorias{background:var(--soft)}
   .posts{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem}
   .post{
     background:var(--soft);
@@ -338,6 +401,7 @@
         <li><a href="#sobre">Nossa História</a></li>
         <li><a href="#encontro">Encontro 2026</a></li>
         <li><a href="#galeria">Galeria</a></li>
+        <li><a href="#turmas">Turmas</a></li>
         <li><a href="#memorias">Memórias</a></li>
         <li><a href="#contato">Contato</a></li>
       </ul>
@@ -553,6 +617,63 @@
     </article>
 
     <p class="gallery-note">✿ Envie suas fotos pelo e-mail da turma para que cada ano ganhe vida ✿</p>
+  </div>
+</section>
+
+<section class="turmas" id="turmas">
+  <div class="container">
+    <div class="section-title">
+      <h2>Nossas Turmas</h2>
+      <div class="ornament">❦</div>
+      <p class="turmas-intro">Fotografias das nossas turmas no <strong>Colégio Dom Bosco</strong>. Conforme reconhecemos os colegas, vamos preenchendo os nomes ao lado de cada número. Você lembra de alguém? Mande pelo e-mail da turma!</p>
+    </div>
+
+    <div class="turmas-grid">
+      <article class="turma-card">
+        <a href="turma_cdb1_lista.pdf" target="_blank" rel="noopener" class="turma-preview" aria-label="Abrir lista da turma CDB 1">
+          <img src="turma_cdb1_thumb.jpg" alt="Foto da turma CDB 1 com colegas numerados" loading="lazy">
+          <span class="turma-preview-overlay">📖 Folhear</span>
+        </a>
+        <div class="turma-info">
+          <h3>Turma CDB 1</h3>
+          <p class="turma-meta">38 colegas · ajude a identificar</p>
+          <div class="turma-actions">
+            <a href="turma_cdb1_lista.pdf" target="_blank" rel="noopener" class="btn btn-outline">Abrir e folhear</a>
+            <a href="turma_cdb1_lista.pdf" download class="btn-link">⬇ Baixar</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="turma-card">
+        <a href="turma_cdb2_lista.pdf" target="_blank" rel="noopener" class="turma-preview" aria-label="Abrir lista da turma CDB 2">
+          <img src="turma_cdb2_thumb.jpg" alt="Foto da turma CDB 2 com colegas numerados" loading="lazy">
+          <span class="turma-preview-overlay">📖 Folhear</span>
+        </a>
+        <div class="turma-info">
+          <h3>Turma CDB 2</h3>
+          <p class="turma-meta">34 colegas · ajude a identificar</p>
+          <div class="turma-actions">
+            <a href="turma_cdb2_lista.pdf" target="_blank" rel="noopener" class="btn btn-outline">Abrir e folhear</a>
+            <a href="turma_cdb2_lista.pdf" download class="btn-link">⬇ Baixar</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="turma-card">
+        <a href="turma_cdb3_lista.pdf" target="_blank" rel="noopener" class="turma-preview" aria-label="Abrir lista da turma CDB 3">
+          <img src="turma_cdb3_thumb.jpg" alt="Foto da turma CDB 3 com colegas numerados" loading="lazy">
+          <span class="turma-preview-overlay">📖 Folhear</span>
+        </a>
+        <div class="turma-info">
+          <h3>Turma CDB 3</h3>
+          <p class="turma-meta">35 colegas · ajude a identificar</p>
+          <div class="turma-actions">
+            <a href="turma_cdb3_lista.pdf" target="_blank" rel="noopener" class="btn btn-outline">Abrir e folhear</a>
+            <a href="turma_cdb3_lista.pdf" download class="btn-link">⬇ Baixar</a>
+          </div>
+        </div>
+      </article>
+    </div>
   </div>
 </section>
 
